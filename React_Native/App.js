@@ -8,13 +8,14 @@ import Imag from './src/image'
 import Cafe from './src/fundamental'
 import FlatListBasics from './src/flatList'
 import App from './src/scrollView'
+import SectionListBasis from './src/sectionList'
 const HellloWorld = () => {
   return (
 <View> 
  
  
 
-<FlatListBasics></FlatListBasics>
+<SectionListBasis></SectionListBasis>
  
 </View>
 
