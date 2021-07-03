@@ -1,0 +1,36 @@
+import React from 'react'
+import {View, Text, StyleSheet } from 'react-native'
+
+
+const FlexDimensionsBasics = () => {
+
+    return (
+
+        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: 'powderblue' }} />
+        <View style={{ flex: 2, backgroundColor: 'skyblue' }} />
+        <View style={{ flex: 3, backgroundColor: 'steelblue' }} />
+      </View>
+         
+
+    )
+}
+
+
+// const styles = StyleSheet.create ({
+
+//     ssmall:{flex:1,
+//         backgroundColor:'powderblue'
+//     },
+    
+//     mmedium:{
+//         flex:2,
+//         backgroundColor:'skyblue'
+//     },
+//     llarge:{
+//         flex:3,
+//         backgroundColor:'steelblue'
+//     }
+//     })
+
+    export default FlexDimensionsBasics
