@@ -1,31 +1,30 @@
-import React , {useState}from 'react'
-import { Text, View, Stylesheet, Button } from 'react-native'
+import React, { useState } from 'react';
+import { Button, View, Text, Modal } from 'react-native';
 
-const Cat  =(props) => {
-    const [isHungry, setIsHungry] = useState(true)
+const Hello =() => {
+ const [ modelOpen, setModelOpen] = useState(false)
+  return(
+
+    <View>
+
+      
+      <Modal
+      visible={modelOpen} animationType='slide'
+      >
+   <View><Text>Its time to work form home</Text>
+   <Button title="close " onPress={() => setModelOpen(false)}/>
+
+</View>   
+
+      </Modal>
+      <Button title="about us " onPress={() => setModelOpen(true)}/>
 
 
-    return (
-        <View>
-            <Text>
-                I am {props.name}, and I am {isHungry ? "Hungry" : "Full"}!</Text>
-            <Button 
-            onPress={()=> { setIsHungry(false)}}
-            disabled= {!isHungry}
-            title = {isHungry ? "Pour some milk, Please!" : "Thank you!"}
-            />
-        </View>
-    )
-    }
 
-    const Cafe = () => {
-        return (
-            <>
-             <Cat name = "thomas" /> 
-             <Cat name = " Ranjan"/>
-             <Cat name = " Nikhil"/>
-            </>
-        )
-    }
 
-    export default Cafe
+      <Text>Helo</Text>
+    </View>
+  )
+}
+
+export default Hello;

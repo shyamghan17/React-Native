@@ -1,12 +1,11 @@
-import React from 'react';
-import Flex from './src/flexDirecti';
-import DirectionLayout from './src/flexDir';
-
-const Hello = () => {
-  return (
-    <DirectionLayout></DirectionLayout>
-  );
-};
-
-
-export default Hello;
+import React, { Component } from "react";
+import ImageSlide from "./src/Image/ImageSlide";
+import Rough from "./src/rough";
+class AboutUs extends Component {
+  render() {
+    return (
+      
+       <Rough></Rough>
+    )
+}}
+export default AboutUs;
