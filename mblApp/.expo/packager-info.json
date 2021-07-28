@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": null,
+  "packagerPort": 19000,
+  "expoServerNgrokUrl": "https://cy-e64.anonymous.mblapp.exp.direct",
+  "packagerNgrokUrl": "https://packager.cy-e64.anonymous.mblapp.exp.direct",
+  "ngrokPid": 11552,
+  "packagerPid": null,
+  "webpackServerPort": null
+}

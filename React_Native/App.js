@@ -1,11 +1,22 @@
-import React, { Component } from "react";
-import ImageSlide from "./src/Image/ImageSlide";
-import Rough from "./src/rough";
-class AboutUs extends Component {
-  render() {
-    return (
-      
-       <Rough></Rough>
-    )
-}}
-export default AboutUs;
+import React from 'react';
+import { Text, StyleSheet, FlatList,createStackNavigator, createAppContainer, Image, ScrollView } from 'react-native';
+
+import HomeScreen from './src/homeScreen'
+
+const navigator = createStackNavigator (
+    {
+
+      Home: HomeScreen,
+
+
+    } ,
+    {
+    initialRouteName:'Home',
+    defaultNavigationOptions:{
+      titel:'App'
+    }
+  }
+)
+
+
+export default createAppContainer(navigator)
