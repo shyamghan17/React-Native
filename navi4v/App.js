@@ -1,53 +1,59 @@
+class MyHomeScreen extends React.Component {
+  static navigationOptions = {
+    drawerLabel: 'Home',
+    drawerIcon: ({ tintColor }) => (
+      <Image
+        source={require('./src/38.png')}
+        style={[styles.icon, { tintColor: tintColor }]}
+      />
+    ),
+  };
 
-import * as React from 'react';
-import { View, Text, Button } from 'react-native';
-import { NavigationContainer, NavigationHelpersContext } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-function HomeScreen({navigation}) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button title='Go to home' onPress={()=> {navigation.navigate('Detail', {
-        itemId: 86,
-        otherParam: 'anything you want here',
-          })}} />
-              </View>
-  );
-}
-
-function DetailScreen({route, navigation}) {
-  const { itemId, otherParam } = route.params
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>itemId: {JSON.stringify(itemId)}</Text>
-      <Text>otherParam: {JSON.stringify(otherParam)}</Text>
-      <Text>Detail Screen</Text>
+  render() {
+    return (
       <Button
-        title="Go to Details... again"
-        onPress={() =>
-          navigation.push('Details', {
-            itemId: Math.floor(Math.random() * 100),
-          })
-        }/>
-      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
-      <Button title="Go back" onPress={() => navigation.goBack()} />
-
-    </View>
-  );
+        onPress={() => this.props.navigation.navigate('Notifications')}
+        title="Go to notifications"
+      />
+    );
+  }
 }
 
-const Stack = createNativeStackNavigator();
+class MyNotificationsScreen extends React.Component {
+  static navigationOptions = {
+    drawerLabel: 'Notifications',
+    drawerIcon: ({ tintColor }) => (
+      <Image
+        source={require('./src/38.png')}
+        style={[styles.icon, { tintColor: tintColor }]}
+      />
+    ),
+  };
 
-function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Overview' }} />
-        <Stack.Screen name= "Detail" component={DetailScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  render() {
+    return (
+      <Button
+        onPress={() => this.props.navigation.goBack()}
+        title="Go back home"
+      />
+    );
+  }
 }
 
-export default App;
+const styles = StyleSheet.create({
+  icon: {
+    width: 24,
+    height: 24,
+  },
+});
+
+const MyDrawerNavigator = createDrawerNavigator({
+  Home: {
+    screen: MyHomeScreen,
+  },
+  Notifications: {
+    screen: MyNotificationsScreen,
+  },
+});
+
+const MyApp = createAppContainer(MyDrawerNavigator);
