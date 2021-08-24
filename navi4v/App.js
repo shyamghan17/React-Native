@@ -1,3 +1,7 @@
+import React from 'react';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import {Text, view, StyleSheet, Image} from 'react-native'
 class MyHomeScreen extends React.Component {
   static navigationOptions = {
     drawerLabel: 'Home',
