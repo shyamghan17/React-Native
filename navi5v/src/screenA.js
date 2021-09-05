@@ -1,52 +1,72 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { useState } from 'react';
-
+import { View, StyleSheet, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { useState, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import styles from './style';
 
 export default screenA= ({navigation, route}) =>{
 
-  const Users = [
-
-    {
-      id:1,
-      name:'user A'
-    }, {
-      id:2,
-      name:'user B'
-    }, {
-      id:3,
-      name:'user C'
-    }, {
-      id:4,
-      name:'user D'
-    }
-  ]
-
   const [name, setName] = useState('')
-  const OnPressHandeler = ()=>navigation.navigate('screenB')
-    // navigation.toggleDrawer()
+  // const [getData, setGetData] = useState('')
 
+
+  useEffect(() => {
+    getData()
+  }, [])
+  const getData = ()=>{
+    try {
+      AsyncStorage.getItem('UserName')
+      .then(value => {
+        if(value != null) {
+          setName(value)
+        }
+      })
+      
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
+
+ 
+  const updateData = ()=>{
+    try {
+      AsyncStorage.getItem('UserName')
+      .then(value => {
+        if(value != null) {
+         Alert.alert('success', 'your data has been updated')
+        }
+      })
+      
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const removeData = async() =>{
+    try {
+      await AsyncStorage.removeItem('UserName')
+      navigation.navigate('Login')
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
     return(
-      <View style={styles.container1}>
+      <View style={styles.container}>
         <Text style={styles.text}>
-          screen A
+          Safe Data ! Welcome {name}
         </Text>
-        <TouchableOpacity onPress={OnPressHandeler}>
-          <Text> Get the last user</Text>
-        </TouchableOpacity>
-        <Text>  Screen B</Text> 
-      <Text> {name}</Text>
+                <TextInput style={styles.testInput} placeholder="Enter Your Name" value={name} onChangeText={(value) =>setName(value)}></TextInput> 
+
+        <TouchableOpacity
+        onPress={updateData} style={styles.button}><Text>update</Text></TouchableOpacity>
+
+<TouchableOpacity
+        onPress={removeData} style={styles.button}><Text>Remove</Text></TouchableOpacity>
+
+        
       </View>
     )
   }
-  const styles = StyleSheet.create({
-    container1:{
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center',
-  },
-  text:{
-    fontWeight:'500',
-    fontSize:50,
-  } 
-  })

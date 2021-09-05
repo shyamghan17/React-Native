@@ -13,6 +13,8 @@ target 'navi5v' do
   )
 
 
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
+
   target 'navi5vTests' do
     inherit! :complete
     # Pods for testing

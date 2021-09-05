@@ -20,7 +20,7 @@ const App = () => {
  return(
   <NavigationContainer >
   <Stack.Navigator 
-  initialRouteName='screenA'
+  initialRouteName='Login'
   drawerPosition='left'
   drawerType='front'
   edgeWidth={600}
