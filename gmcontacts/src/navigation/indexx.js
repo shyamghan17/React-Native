@@ -7,9 +7,9 @@ import HomeNavigator from './HomeNavigator';
 const NavContainer = ()=>{
     return(
         <NavigationContainer>
-           {/* <AuthNavigator/> */}
-           <HomeNavigator/>
-           {/* <DrawerNavigator/> */}
+           <AuthNavigator/>
+           {/* <HomeNavigator/>
+           <DrawerNavigator/> */}
         </NavigationContainer>
 
     )
