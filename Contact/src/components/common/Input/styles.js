@@ -1,15 +1,17 @@
 
 import { StyleSheet } from 'react-native'
+import colors from '../../../assets/theme/colors';
 
 export default StyleSheet.create({
 
-   loginInput:{
+    wrapper:{
        margin:8,
-       height:40,
+       height:42,
        width:'80%',
-       borderColor:'#232323',
+       borderColor: colors.gray,
        borderRadius:6,
        borderWidth:1,
-
+       paddingLeft:10,
+       paddingRight:2,
    }
 });

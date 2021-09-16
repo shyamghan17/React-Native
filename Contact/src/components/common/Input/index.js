@@ -1,14 +1,24 @@
 import React from 'react';
 import {Text, TextInput, View } from 'react-native';
 
-import styles from './styles';
-
-const Input = ()=>{
+const Input = ({onChangeText, value, style, lable, placeholder, icon})=>{
 
 
     return(
 <View>
-<TextInput style={styles.loginInput}></TextInput>
+    {lable && <Text>{lable}</Text>}
+    <View>
+        <View>{icon && icon}</View>
+        <TextInput 
+        onChangeText={onChangeText}
+        value={value}
+        placeholder={placeholder}
+        style={style}
+        
+        >
+        </TextInput>
+    </View>
+
 </View>         
     )
 }
