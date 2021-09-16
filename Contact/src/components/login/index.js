@@ -5,7 +5,7 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Input from '../../components/common/Input';
 import CustomButton from '../../components/common/customButton';
 
-const Login = ()=>{  
+const LoginComponent = ()=>{  
     const [value, onChangeText] = useState('');
 
     return(
@@ -14,10 +14,6 @@ const Login = ()=>{
 
             <Input
             lable="Username"
-            onChangeText={text => onChangeText(text)}
-            value={value}
-            placeholder="User Name"
-            icon={<Text>HIDE</Text>}
             iconPosition='right'
             // error ='This Field is required'
             />
@@ -39,4 +35,4 @@ const Login = ()=>{
         </SafeAreaView>
     )
 }
-export default Login
+export default LoginComponent 

@@ -9,7 +9,9 @@ export default StyleSheet.create({
        borderRadius:6,
        borderWidth:1,
         paddingHorizontal:5,
-        marginTop:5,
+        marginVertical:5,
+        alignItems:'center',
+    justifyContent:'space-evenly'
    },
    textInput:{
        flex:1,
@@ -25,5 +27,8 @@ export default StyleSheet.create({
        color:colors.danger,
        paddingTop:4,
        fontSize:12,
-   }
+   },
+   loadingSection:{
+       flexDirection:'row',
+   },
 });

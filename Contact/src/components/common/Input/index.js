@@ -4,7 +4,7 @@ import colors from '../../../assets/theme/colors';
 import styles from './styles';
 
 
-const Input = ({onChangeText, value, style, lable, placeholder, icon, iconPosition, error})=>{
+const Input = ({onChangeText, value, style, lable, placeholder, icon, iconPosition, error, ...props})=>{
 
     const [focused, setFocused] = useState(false)
 
@@ -34,7 +34,10 @@ const Input = ({onChangeText, value, style, lable, placeholder, icon, iconPositi
 
     <View style={styles.inputContainer}>
     {lable && <Text>{lable}</Text>}
-    <View style={[styles.wrapper,
+
+    <View 
+        style={[styles.wrapper, 
+            {alignItems:icon ? 'center' : 'baseline'},
          {flexDirection: getFlexDirection(),
          borderColor:getBorderColor()},
          ]}>
@@ -46,9 +49,10 @@ const Input = ({onChangeText, value, style, lable, placeholder, icon, iconPositi
     onChangeText={onChangeText}
     value={value}
     placeholder={placeholder}
-        onFocus={()=>{setFocused(true)
-        }}
-        onBlur={()=>{setFocused(false)}}
+    onFocus={()=>{setFocused(true)
+    }}
+    onBlur={()=>{setFocused(false)}}
+        {...props}
     >
     </TextInput>
     </View>
