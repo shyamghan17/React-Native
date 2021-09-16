@@ -5,13 +5,23 @@ import colors from '../../../assets/theme/colors';
 export default StyleSheet.create({
 
     wrapper:{
-       margin:8,
        height:42,
-       width:'80%',
-       borderColor: colors.gray,
        borderRadius:6,
        borderWidth:1,
-       paddingLeft:10,
-       paddingRight:2,
+        paddingHorizontal:5,
+        marginTop:5,
+   },
+   textInput:{
+       flex:1,
+     
+   },
+   inputContainer:{
+       paddingVertical:12,
+       
+   },
+   error:{
+       color:colors.danger,
+       paddingTop:4,
+       fontSize:12,
    }
 });

@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
+import {Text} from 'react-native'
 import Container from '../../components/common/container';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Input from '../../components/common/Input';
-import styles from '../../components/common/Input/styles';
 
 const Login = ()=>{  
     const [value, onChangeText] = useState('');
@@ -16,12 +16,19 @@ const Login = ()=>{
             onChangeText={text => onChangeText(text)}
             value={value}
             placeholder="User Name"
-            style={styles.wrapper}
+            icon={<Text>HIDE</Text>}
+            iconPosition='right'
+            // error ='This Field is required'
             />
-            <Input 
-            lable='Password'
-            style={styles.wrapper}
-            placeholder="Password"/>
+
+<Input
+            lable="Password"
+            onChangeText={text => onChangeText(text)}
+            value={value}
+            placeholder="Password"
+            icon={<Text>HIDE</Text>}
+            iconPosition='right'
+            />
         </Container>
         </SafeAreaView>
     )
