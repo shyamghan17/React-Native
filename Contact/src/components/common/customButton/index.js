@@ -5,7 +5,7 @@ import colors from '../../../assets/theme/colors';
 import styles from './styles';
 
 
-const CustomButton = ({title, dissabled, loading, secondary, danger, primary, ...props})=>{
+const CustomButton = ({onPress, title, dissabled, loading, secondary, danger, primary, ...props})=>{
 
     // const [focused, setFocused] = useState(false)
 
@@ -29,9 +29,9 @@ const CustomButton = ({title, dissabled, loading, secondary, danger, primary, ..
 
     <TouchableOpacity 
     style={[styles.wrapper, {backgroundColor:getBackgroundColor()}]}
-    disabled={dissabled}
     // loading={loading}
-    // onPress={}
+    // disabled={dissabled}
+    onPress={onPress}
    
     >
          <View style={styles.loadingSection}>
