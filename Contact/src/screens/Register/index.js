@@ -7,10 +7,10 @@ const Register = ()=>{
 
     const [form, setForm] = useState({});
     const [errors, setErrors] = useState({});
-    const {BACKEND_URL} = envs;
+    // const {BACKEND_URL} = envs;
 
-        console.log('BACKEND_URL :>>', BACKEND_URL);
-        console.log('__DEV__ :>>', __DEV__);
+    //     console.log('BACKEND_URL :>>', BACKEND_URL);
+    //     console.log('__DEV__ :>>', __DEV__);
 
 
 
